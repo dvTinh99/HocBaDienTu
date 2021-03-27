@@ -1,0 +1,2 @@
+﻿ý tưởng :
+list trường -> list lớp -> list học sinh->Học bạ

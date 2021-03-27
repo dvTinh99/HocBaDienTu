@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="String"/>
+		<item key="selection" value="row"/>
 		<list key="findhistory">
+			<item value="row"/>
 			<item value="float"/>
 			<item value="Ma_hs"/>
 		</list>

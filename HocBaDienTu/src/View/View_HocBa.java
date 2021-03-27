@@ -9,11 +9,11 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JRadioButton;
+import javax.swing.JComboBox;
 
 public class View_HocBa extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -36,22 +36,15 @@ public class View_HocBa extends JFrame {
 	 */
 	public View_HocBa() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 792, 550);
+		setBounds(100, 100, 903, 550);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Học Bạ Học Sinh X");
-		lblNewLabel.setBounds(259, 59, 339, 62);
-		contentPane.add(lblNewLabel);
-		
-		table = new JTable();
-		table.setBounds(10, 106, 756, 394);
-		contentPane.add(table);
-		
-		JRadioButton rdbtnK = new JRadioButton("Kì 2");
-		rdbtnK.setBounds(592, 46, 109, 23);
-		contentPane.add(rdbtnK);
+		JComboBox comboBox = new JComboBox();
+		comboBox.setToolTipText("");
+		comboBox.setBounds(797, 30, 52, 22);
+		contentPane.add(comboBox);
 	}
 }

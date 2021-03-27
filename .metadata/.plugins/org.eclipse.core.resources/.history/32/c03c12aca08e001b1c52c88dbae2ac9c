@@ -1,6 +1,0 @@
-package Dao;
-
-public class GiaoVienDao {
-	public static Connection conn = null;
-
-}

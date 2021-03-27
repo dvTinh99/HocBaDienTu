@@ -4,4 +4,8 @@
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="Dao.DAO_TruongHoc"/>
+    <fullyQualifiedTypeName name="Model.TruongHoc"/>
+    <fullyQualifiedTypeName name="Model.LopHoc"/>
+    <fullyQualifiedTypeName name="Dao.DAO_LopHoc"/>
 </qualifiedTypeNameHistroy>
