@@ -1,0 +1,20 @@
+package Dao;
+
+import java.sql.Connection;
+import java.sql.Statement;
+import java.util.List;
+
+import Model.MonHoc;
+
+public class GiaoVienDao {
+	public static Connection conn;
+	
+	public static List<MonHoc> getMonHoc(){
+		List<MonHoc> list = null;
+		ConnectToDB connect = new ConnectToDB();
+		conn = connect.getConnection();
+		Statement st = conn.createStatement();
+		return list;
+	}
+
+}

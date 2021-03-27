@@ -1,0 +1,53 @@
+package Model;
+
+public class LopHoc {
+	int Ma_class;
+	int Ma_KH;
+	int Ma_namHoc;
+	int Ma_gv;
+	String Ten_lop;
+	
+	LopHoc(){}
+
+	public LopHoc(int ma_class, int ma_KH, int ma_namHoc, int ma_gv) {
+		super();
+		Ma_class = ma_class;
+		Ma_KH = ma_KH;
+		Ma_namHoc = ma_namHoc;
+		Ma_gv = ma_gv;
+	}
+
+	public int getMa_class() {
+		return Ma_class;
+	}
+
+	public void setMa_class(int ma_class) {
+		Ma_class = ma_class;
+	}
+
+	public int getMa_KH() {
+		return Ma_KH;
+	}
+
+	public void setMa_KH(int ma_KH) {
+		Ma_KH = ma_KH;
+	}
+
+	public int getMa_namHoc() {
+		return Ma_namHoc;
+	}
+
+	public void setMa_namHoc(int ma_namHoc) {
+		Ma_namHoc = ma_namHoc;
+	}
+
+	public int getMa_gv() {
+		return Ma_gv;
+	}
+
+	public void setMa_gv(int ma_gv) {
+		Ma_gv = ma_gv;
+	}
+	
+
+}

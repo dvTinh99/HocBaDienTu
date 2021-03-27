@@ -1,0 +1,14 @@
+package Model;
+
+public class TruongHoc {
+	int Ma_school ;
+	String Ten_truong;
+	String Dia_chi;
+	int Ma_cap;
+	
+	public TruongHoc() {
+	}
+	
+	
+
+}
