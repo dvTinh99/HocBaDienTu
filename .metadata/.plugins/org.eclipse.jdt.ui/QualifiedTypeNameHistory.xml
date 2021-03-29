@@ -8,4 +8,10 @@
     <fullyQualifiedTypeName name="Model.TruongHoc"/>
     <fullyQualifiedTypeName name="Model.LopHoc"/>
     <fullyQualifiedTypeName name="Dao.DAO_LopHoc"/>
+    <fullyQualifiedTypeName name="Model.KhoiHoc"/>
+    <fullyQualifiedTypeName name="Dao.DAO_KhoiHoc"/>
+    <fullyQualifiedTypeName name="java.awt.event.ItemListener"/>
+    <fullyQualifiedTypeName name="Model.Diem"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="Dao.DAO_Diem"/>
 </qualifiedTypeNameHistroy>

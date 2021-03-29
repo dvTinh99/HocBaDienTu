@@ -5,9 +5,32 @@ public class Diem {
 	int Ma_hs;
 	int Ma_PC;
 	int Ma_mon;
+	int Ma_Cap;
+	public int getMa_Cap() {
+		return Ma_Cap;
+	}
+
+	public void setMa_Cap(int ma_Cap) {
+		Ma_Cap = ma_Cap;
+	}
+
 	String Diem;
+	String TenMonHoc;
 	
+	public String getTenMonHoc() {
+		return TenMonHoc;
+	}
+
+	public void setTenMonHoc(String tenMonHoc) {
+		TenMonHoc = tenMonHoc;
+	}
+
 	Diem(){}
+	public Diem(String tenMon,String Diem) {
+		this.TenMonHoc = tenMon;
+		this.Diem = Diem;
+		
+	}
 
 	public Diem(int ma_diem, int ma_hs, int ma_PC, int ma_mon, String diem) {
 		super();

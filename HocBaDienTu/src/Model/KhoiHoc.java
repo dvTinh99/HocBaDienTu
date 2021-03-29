@@ -1,24 +1,29 @@
 package Model;
 
 public class KhoiHoc {
-	String MaKH;
+	int MaKH;
 	String TenKH;
 	int Ma_school;
 	
 	KhoiHoc(){}
 
-	public KhoiHoc(String maKH, String tenKH, int ma_school) {
+	public KhoiHoc(int maKH, String tenKH, int ma_school) {
 		super();
 		MaKH = maKH;
 		TenKH = tenKH;
 		Ma_school = ma_school;
 	}
 
-	public String getMaKH() {
+	public KhoiHoc(int MaKH, String TenKH) {
+		this.MaKH = MaKH;
+		this.TenKH = TenKH;
+	}
+
+	public int getMaKH() {
 		return MaKH;
 	}
 
-	public void setMaKH(String maKH) {
+	public void setMaKH(int maKH) {
 		MaKH = maKH;
 	}
 

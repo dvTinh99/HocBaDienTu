@@ -6,13 +6,16 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="row"/>
+		<item key="selection" value="ItemChangeListener"/>
 		<list key="findhistory">
+			<item value="ItemChangeListener"/>
+			<item value="LopHoc"/>
 			<item value="row"/>
 			<item value="float"/>
 			<item value="Ma_hs"/>
 		</list>
 		<list key="replacehistory">
+			<item value="KhoiHoc"/>
 			<item value="String"/>
 			<item value="Ma_gv"/>
 		</list>
