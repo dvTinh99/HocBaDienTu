@@ -11,7 +11,10 @@
     <fullyQualifiedTypeName name="Model.KhoiHoc"/>
     <fullyQualifiedTypeName name="Dao.DAO_KhoiHoc"/>
     <fullyQualifiedTypeName name="java.awt.event.ItemListener"/>
-    <fullyQualifiedTypeName name="Model.Diem"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="Dao.GiaoVienDao"/>
+    <fullyQualifiedTypeName name="com.sun.jndi.toolkit.dir.ContainmentFilter"/>
+    <fullyQualifiedTypeName name="Model.Diem"/>
     <fullyQualifiedTypeName name="Dao.DAO_Diem"/>
 </qualifiedTypeNameHistroy>

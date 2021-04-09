@@ -1,0 +1,83 @@
+package View;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
+
+import Dao.GiaoVienDao;
+import Model.HocSinh;
+
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class View_NhapDiem extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					View_NhapDiem frame = new View_NhapDiem();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public View_NhapDiem() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 838, 600);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(null, "Danh Sach Diem", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBounds(10, 11, 802, 386);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 21, 782, 354);
+		panel.add(scrollPane);
+		
+		String header[] = {"Ten Hoc Sinh","Mieng","15p","giua ki","cuoi ki"};
+		DefaultTableModel table_model=new DefaultTableModel(header,0);
+		
+		table = new JTable(table_model);
+		scrollPane.setViewportView(table);
+		showHocSinh(table);
+	}
+	public static void showHocSinh(JTable table) {
+		DefaultTableModel df = (DefaultTableModel) table.getModel();
+		df.setRowCount(0);
+		List<HocSinh> list = new ArrayList<HocSinh>();
+		list = GiaoVienDao.getHocSinh();
+		for(HocSinh hs : list) {
+			String[] data = {
+					hs.getHo()+hs.getTen()
+					
+			};
+			df.addRow(data);
+		}
+		table.setModel(df);
+	}
+}

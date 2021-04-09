@@ -6,6 +6,26 @@ public class Diem {
 	int Ma_PC;
 	int Ma_mon;
 	int Ma_Cap;
+	String Ho ;
+	String Ten ;
+	String Diem15p;
+	String Diem45p ;
+	String DiemGiuaKi ;
+	String DiemCuoiKi ;
+	String Diem;
+	String TenMonHoc;
+	
+	public Diem(String Ho,String Ten, String Diem, String Diem15p, String Diem45p, String DiemGiuaKi, String DiemCuoiKi) {
+		this.Ho = Ho;
+		this.Ten = Ten;
+		this.Diem = Diem ;
+		this.Diem15p = Diem15p ;
+		this.Diem45p = Diem45p ;
+		this.DiemGiuaKi = DiemGiuaKi ;
+		this.DiemCuoiKi = DiemCuoiKi ;
+				
+	}
+	
 	public int getMa_Cap() {
 		return Ma_Cap;
 	}
@@ -14,8 +34,7 @@ public class Diem {
 		Ma_Cap = ma_Cap;
 	}
 
-	String Diem;
-	String TenMonHoc;
+	
 	
 	public String getTenMonHoc() {
 		return TenMonHoc;
@@ -79,6 +98,54 @@ public class Diem {
 
 	public void setDiem(String diem) {
 		Diem = diem;
+	}
+
+	public String getHo() {
+		return Ho;
+	}
+
+	public void setHo(String ho) {
+		Ho = ho;
+	}
+
+	public String getTen() {
+		return Ten;
+	}
+
+	public void setTen(String ten) {
+		Ten = ten;
+	}
+
+	public String getDiem15p() {
+		return Diem15p;
+	}
+
+	public void setDiem15p(String diem15p) {
+		Diem15p = diem15p;
+	}
+
+	public String getDiem45p() {
+		return Diem45p;
+	}
+
+	public void setDiem45p(String diem45p) {
+		Diem45p = diem45p;
+	}
+
+	public String getDiemGiuaKi() {
+		return DiemGiuaKi;
+	}
+
+	public void setDiemGiuaKi(String diemGiuaKi) {
+		DiemGiuaKi = diemGiuaKi;
+	}
+
+	public String getDiemCuoiKi() {
+		return DiemCuoiKi;
+	}
+
+	public void setDiemCuoiKi(String diemCuoiKi) {
+		DiemCuoiKi = diemCuoiKi;
 	}
 	
 	

@@ -203,10 +203,34 @@ public class View_LopHoc extends JFrame {
 		panel_2.add(btnNewButton);
 		
 		JButton btnSua = new JButton("Sua");
+		btnSua.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String ma_hs = txt_ma_hs.getText();
+				String ho_hs = txt_ho.getText();
+				String ten_hs = txt_ten.getText();
+				String gioiTinh = txt_gioi_tinh.getText();
+				String ngaySinh = txt_ngay_sinh.getText();
+				String diaChi = txt_dia_chi.getText();
+				String sdt = txt_sdt.getText();
+				String cmnd = txt_cmnd.getText();
+				GiaoVienDao gv = new GiaoVienDao();
+				JOptionPane.showMessageDialog(null, gv.updateHS(ma_hs, ho_hs, ten_hs, gioiTinh, ngaySinh, diaChi, sdt, cmnd));
+				showHocSinh(table);
+			}
+		});
 		btnSua.setBounds(10, 104, 113, 23);
 		panel_2.add(btnSua);
 		
 		JButton btnXoa = new JButton("Xoa");
+		btnXoa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int rowSelect = table.getSelectedRow();
+				int maHS  = Integer.parseInt((String)table.getValueAt(rowSelect, 0));
+				GiaoVienDao gvDao = new GiaoVienDao();
+				JOptionPane.showMessageDialog(null, gvDao.deleteHS(maHS));
+				showHocSinh(table);
+			}
+		});
 		btnXoa.setBounds(10, 138, 113, 23);
 		panel_2.add(btnXoa);
 		

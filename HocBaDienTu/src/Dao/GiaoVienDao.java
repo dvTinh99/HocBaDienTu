@@ -94,4 +94,51 @@ public class GiaoVienDao {
         return "OK";
         
 	}
+	/* update */
+	public static String updateHS(String ma_hs,String ho_hs,String ten_hs,String gioiTinh,String ngaySinh,String diaChi, String sdt,String cmnd) {
+		String sql = "UPDATE Hoc_sinh SET "
+				+ " Ho = "+"'"+ho_hs+"'"
+				+ ",Ten = "+"'"+ten_hs+"'"
+				+ ",Gioi_Tinh = "+"'"+ gioiTinh+"'"
+				+ ",Ngay_Sinh = " +"'"+ ngaySinh+"'"
+				+ ",Dia_Chi = "+"'"+ diaChi+"'"
+				+ ",Sdt = " +"'"+ sdt+"'"
+				+ ",CMND = " +"'"+ cmnd+"'"
+				+" WHERE Ma_hs = "+ ma_hs;
+		
+		try {
+//			System.out.println(sql);
+			Statement st = conn.createStatement();
+			if(st.executeUpdate(sql) == 1) {
+				return "OK";
+			}else{
+				return "Xoa khong thanh cong";
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "loi roi";
+        
+	}
+	
+	
+	//////////////////////////
+	public static String deleteHS(int maHS) {
+		String sql = "DELETE FROM Hoc_sinh WHERE Ma_hs =" + maHS; 
+		
+		try {
+			Statement st = conn.createStatement();
+			if(st.executeUpdate(sql) == 1) {
+				return "OK";
+			}else{
+				return "Xoa khong thanh cong";
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return "Loi ngoai ham";
+        
+	}
 }

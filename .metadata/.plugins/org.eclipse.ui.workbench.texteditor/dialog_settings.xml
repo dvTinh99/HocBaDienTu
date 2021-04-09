@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="ItemChangeListener"/>
+		<item key="selection" value="JOptionPane.showMessageDialog(null, gv.insertHS(ma_hs, ho_hs, ten_hs, gioiTinh, ngaySinh, diaChi, sdt, cmnd));"/>
 		<list key="findhistory">
+			<item value="delete"/>
+			<item value="Dialog"/>
+			<item value="dialog"/>
 			<item value="ItemChangeListener"/>
 			<item value="LopHoc"/>
 			<item value="row"/>

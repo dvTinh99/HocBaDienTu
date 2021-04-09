@@ -1,0 +1,174 @@
+package View;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
+
+import Dao.GiaoVienDao;
+import Model.HocSinh;
+
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class View_NhapDiem extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+	private JPanel panel_1;
+	private JPanel panel_2;
+	private JTextField textField;
+	private JTextField ktMieng;
+	private JTextField kt15p;
+	private JTextField kt1tiet;
+	private JTextField ktGiuaKi;
+	private JTextField ktCuoiKi;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					View_NhapDiem frame = new View_NhapDiem();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public View_NhapDiem() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 838, 600);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(null, "Danh Sach Diem", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBounds(10, 11, 802, 386);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 21, 782, 354);
+		panel.add(scrollPane);
+		
+		String header[] = {"Ten Hoc Sinh","Mieng","15p","45p","giua ki","cuoi ki"};
+		DefaultTableModel table_model=new DefaultTableModel(header,0);
+		
+		table = new JTable(table_model);
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int rowSelected = table.getSelectedRow();
+//				.setText(String.valueOf(table.getValueAt(rowSelected, 0)));
+//				txt_ho.setText(String.valueOf(table.getValueAt(rowSelected, 1)));
+//				txt_ten.setText(String.valueOf(table.getValueAt(rowSelected, 2)));
+//				txt_gioi_tinh.setText(String.valueOf(table.getValueAt(rowSelected, 3)));
+//				txt_ngay_sinh.setText(String.valueOf(table.getValueAt(rowSelected, 4)));
+//				txt_dia_chi.setText(String.valueOf(table.getValueAt(rowSelected, 5)));
+//				txt_sdt.setText(String.valueOf(table.getValueAt(rowSelected, 6)));
+//				txt_cmnd.setText(String.valueOf(table.getValueAt(rowSelected, 7)));
+			}
+		});
+		scrollPane.setViewportView(table);
+		showHocSinh(table);
+		
+		panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(null, "Nhap Diem", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_1.setBounds(10, 403, 577, 147);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel Ten = new JLabel("Ten Hoc Sinh");
+		Ten.setBounds(24, 28, 75, 14);
+		panel_1.add(Ten);
+		
+		textField = new JTextField();
+		textField.setBounds(132, 25, 117, 20);
+		panel_1.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("Diem Kiem Tra Mieng");
+		lblNewLabel.setBounds(299, 28, 168, 14);
+		panel_1.add(lblNewLabel);
+		
+		ktMieng = new JTextField();
+		ktMieng.setBounds(477, 25, 86, 20);
+		panel_1.add(ktMieng);
+		ktMieng.setColumns(10);
+		
+		JLabel lblDiemKiemTra = new JLabel("Diem Kiem Tra 15p");
+		lblDiemKiemTra.setBounds(24, 67, 162, 14);
+		panel_1.add(lblDiemKiemTra);
+		
+		kt15p = new JTextField();
+		kt15p.setColumns(10);
+		kt15p.setBounds(169, 64, 86, 20);
+		panel_1.add(kt15p);
+		
+		kt1tiet = new JTextField();
+		kt1tiet.setColumns(10);
+		kt1tiet.setBounds(477, 64, 86, 20);
+		panel_1.add(kt1tiet);
+		
+		ktGiuaKi = new JTextField();
+		ktGiuaKi.setColumns(10);
+		ktGiuaKi.setBounds(169, 107, 86, 20);
+		panel_1.add(ktGiuaKi);
+		
+		ktCuoiKi = new JTextField();
+		ktCuoiKi.setColumns(10);
+		ktCuoiKi.setBounds(477, 107, 86, 20);
+		panel_1.add(ktCuoiKi);
+		
+		JLabel lblDiemKiemTra_2 = new JLabel("Diem Kiem Tra 45p");
+		lblDiemKiemTra_2.setBounds(299, 82, 168, 14);
+		panel_1.add(lblDiemKiemTra_2);
+		
+		JLabel lblDiemKiemTra_3 = new JLabel("Diem Kiem Tra Giua Ki");
+		lblDiemKiemTra_3.setBounds(24, 110, 162, 14);
+		panel_1.add(lblDiemKiemTra_3);
+		
+		JLabel lblDiemKiemTra_4 = new JLabel("Diem Kiem Tra Cuoi Ki");
+		lblDiemKiemTra_4.setBounds(299, 119, 168, 14);
+		panel_1.add(lblDiemKiemTra_4);
+		
+		panel_2 = new JPanel();
+		panel_2.setBorder(new TitledBorder(null, "Thao Tac", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_2.setBounds(597, 404, 215, 146);
+		contentPane.add(panel_2);
+	}
+	public static void showHocSinh(JTable table) {
+		DefaultTableModel df = (DefaultTableModel) table.getModel();
+		df.setRowCount(0);
+		List<HocSinh> list = new ArrayList<HocSinh>();
+		list = GiaoVienDao.getHocSinh();
+		for(HocSinh hs : list) {
+			String[] data = {
+					hs.getHo()+ " "+hs.getTen()
+					
+			};
+			df.addRow(data);
+		}
+		table.setModel(df);
+	}
+}
